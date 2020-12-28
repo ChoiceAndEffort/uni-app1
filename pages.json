@@ -3,69 +3,62 @@
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "uni-app"
+					"navigationStyle": "custom"
 			}
 		},
 		{
-			"path": "pages/tabBar/car/car",
+			"path": "pages/tabBar/beautiful/beautiful",
 			"style": {
-				"navigationBarTitleText": "",
-				"enablePullDownRefresh": false
+					"navigationBarTitleText": "美景"
 			}
-
-		}, 
-		{
-			"path": "pages/tabBar/class/class",
-			"style": {
-				"navigationBarTitleText": "",
-				"enablePullDownRefresh": false
-			}
-
 		},
 		{
-			"path": "pages/tabBar/flower/flower",
+			"path": "pages/tabBar/foods/foods",
 			"style": {
-				"navigationBarTitleText": "",
-				"enablePullDownRefresh": false
+				"navigationBarTitleText": "美食"
 			}
-
+		},
+		{
+			"path": "pages/tabBar/animal/animal",
+			"style": {
+				"navigationBarTitleText": "我的车"
+			}
 		},
 		{
 			"path": "pages/tabBar/me/me",
 			"style": {
-				"navigationBarTitleText": "",
+				"navigationBarTitleText": "我的",
 				"enablePullDownRefresh": false
 			}
-
 		}
 	],
 	"tabBar": {
-		"color": "#7A7E83",
-		"selectedColor": "#007AFF",
-		"borderStyle": "black",
-		"backgroundColor": "#F8F8F8",
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
 		"list": [{
-				"pagePath": "pages/tabBar/flower/flower",
-				// "iconPath": "static/component.png",
-				// "selectedIconPath": "static/componentHL.png",
-				"text": "鲜花"
+				"pagePath": "pages/tabBar/beautiful/beautiful",
+				"iconPath": "static/tab/img.png",
+				"selectedIconPath":"static/tab/img.png",
+				"text": "美景"
 			},
 			{
-				"pagePath": "pages/tabBar/car/car",
-				// "iconPath": "static/component.png",
-				// "selectedIconPath": "static/componentHL.png",
-				"text": "购物车"
+				"pagePath": "pages/tabBar/foods/foods",
+				"iconPath":"static/tab/huo.png",
+				"selectedIconPath":"static/tab/huo.png",
+				"text": "美食"
 			},
 			{
-				"pagePath": "pages/tabBar/class/class",
-				// "iconPath": "static/component.png",
-				// "selectedIconPath": "static/componentHL.png",
-				"text": "分类"
+				"pagePath": "pages/tabBar/animal/animal",
+				"iconPath": "static/tab/niu.png",
+				"selectedIconPath": "static/tab/niu.png",
+				"text": "车"
 			},
 			{
 				"pagePath": "pages/tabBar/me/me",
-				// "iconPath": "static/component.png",
-				// "selectedIconPath": "static/componentHL.png",
+				"iconPath": "static/tab/me.png",
+				"selectedIconPath": "static/tab/me.png",
 				"text": "我的"
 			}
 		]

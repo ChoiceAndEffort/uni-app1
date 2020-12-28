@@ -20,7 +20,7 @@
 		},
 		methods: {
 			handleStart(){
-				const url='/pages/tabBar/flower/flower';
+				const url='/pages/tabBar/beautiful/beautiful';
 				uni.reLaunch({
 					url:url
 				})
