@@ -1,0 +1,42 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/tabBar/car/car",
+    "pages/tabBar/class/class",
+    "pages/tabBar/flower/flower",
+    "pages/tabBar/me/me"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#007AFF",
+    "borderStyle": "black",
+    "backgroundColor": "#F8F8F8",
+    "list": [
+      {
+        "pagePath": "pages/tabBar/flower/flower",
+        "text": "鲜花"
+      },
+      {
+        "pagePath": "pages/tabBar/car/car",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "pages/tabBar/class/class",
+        "text": "分类"
+      },
+      {
+        "pagePath": "pages/tabBar/me/me",
+        "text": "我的"
+      }
+    ]
+  },
+  "usingComponents": {},
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,1 @@
+<view class="content"><image class="logo" src="/static/logo.png"></image><view class="text-area"><text class="title">{{title}}</text></view><button type="default" data-event-opts="{{[['tap',[['handleStart',['$event']]]]]}}" bindtap="__e">开启小程序之旅</button></view>
