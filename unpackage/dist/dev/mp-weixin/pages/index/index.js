@@ -148,14 +148,18 @@ var _default =
 
   },
   onLoad: function onLoad() {
+    var url = '/pages/tabBar/beautiful/index';
+    uni.reLaunch({
+      url: url });
 
   },
   methods: {
     handleStart: function handleStart() {
-      var url = '/pages/tabBar/beautiful/beautiful';
-      uni.reLaunch({
-        url: url });
-
+      var url = '/pages/tabBar/beautiful/index';
+      // uni.reLaunch({
+      // 	url: url
+      // });
+      this.$router.push(url, {}, 'reLaunch'); //使用的是封装的方法
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

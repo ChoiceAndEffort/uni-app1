@@ -1,0 +1,11 @@
+{
+  "component": true,
+  "usingComponents": {
+    "index-u-waterfall-left": "/pages/tabBar/beautiful/index-u-waterfall-left",
+    "index-u-waterfall-right": "/pages/tabBar/beautiful/index-u-waterfall-right",
+    "u-divider": "/node-modules/uview-ui/components/u-divider/u-divider",
+    "u-waterfall": "/node-modules/uview-ui/components/u-waterfall/u-waterfall",
+    "u-lazy-load": "/node-modules/uview-ui/components/u-lazy-load/u-lazy-load",
+    "u-loadmore": "/node-modules/uview-ui/components/u-loadmore/u-loadmore"
+  }
+}

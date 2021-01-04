@@ -904,7 +904,7 @@ function initData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"NODE_ENV":"development","VUE_APP_NAME":"uni-app1","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"VUE_APP_NAME":"uni-app1","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -7331,7 +7331,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"NODE_ENV":"development","VUE_APP_NAME":"uni-app1","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"VUE_APP_NAME":"uni-app1","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -7352,14 +7352,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"NODE_ENV":"development","VUE_APP_NAME":"uni-app1","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_NAME":"uni-app1","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"NODE_ENV":"development","VUE_APP_NAME":"uni-app1","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_NAME":"uni-app1","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -7445,7 +7445,7 @@ var patch = function(oldVnode, vnode) {
     });
     var diffData = this.$shouldDiffData === false ? data : diff(data, mpData);
     if (Object.keys(diffData).length) {
-      if (Object({"NODE_ENV":"development","VUE_APP_NAME":"uni-app1","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"VUE_APP_NAME":"uni-app1","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
           ']差量更新',
           JSON.stringify(diffData));
@@ -10469,6 +10469,417 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
   topTips: 975,
   sticky: 970,
   indexListSticky: 965 };exports.default = _default;
+
+/***/ }),
+/* 40 */,
+/* 41 */,
+/* 42 */,
+/* 43 */,
+/* 44 */,
+/* 45 */,
+/* 46 */,
+/* 47 */,
+/* 48 */,
+/* 49 */,
+/* 50 */,
+/* 51 */,
+/* 52 */,
+/* 53 */,
+/* 54 */
+/*!***********************************************************************!*\
+  !*** E:/project20201123/uni-app1/pages/tabBar/beautiful/constants.js ***!
+  \***********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.imgList = exports.page3 = exports.page2 = exports.page1 = exports.mockList = void 0;var mockList = [
+{
+  star: '⭐⭐⭐',
+  name: '路上风景',
+  area: '新疆',
+  image: 'http://pic.sc.chinaz.com/Files/pic/pic9/202002/zzpic23325_s.jpg' },
+
+{
+  star: '⭐⭐⭐⭐',
+  name: '路上风景',
+  area: '新疆',
+  image: 'http://pic2.sc.chinaz.com/Files/pic/pic9/202002/hpic2119_s.jpg' },
+
+{
+  star: '⭐⭐⭐⭐',
+  name: '路上风景',
+  area: '新疆',
+  image: 'http://pic2.sc.chinaz.com/Files/pic/pic9/202002/zzpic23369_s.jpg' },
+
+{
+  star: '⭐⭐⭐',
+  name: '路上风景',
+  area: '新疆',
+  image: 'http://pic2.sc.chinaz.com/Files/pic/pic9/202002/hpic2130_s.jpg' },
+
+{
+  star: '⭐⭐⭐⭐',
+  name: '路上风景',
+  area: '新疆',
+  image: 'http://pic1.sc.chinaz.com/Files/pic/pic9/202002/zzpic23346_s.jpg' },
+
+{
+  star: '⭐⭐⭐⭐⭐',
+  name: '路上风景',
+  area: '新疆',
+  image: 'http://pic1.sc.chinaz.com/Files/pic/pic9/202002/zzpic23344_s.jpg' },
+
+{
+  star: '⭐⭐⭐⭐⭐',
+  name: '路上风景',
+  area: '新疆',
+  image: 'http://pic1.sc.chinaz.com/Files/pic/pic9/202002/zzpic23343_s.jpg' },
+
+{
+  star: '⭐⭐⭐⭐⭐',
+  name: '路上风景',
+  area: '新疆',
+  image: 'http://pic1.sc.chinaz.com/Files/pic/pic9/202002/zzpic23343_s.jpg' },
+
+{
+  star: '⭐⭐⭐',
+  name: '路上风景',
+  area: '新疆',
+  image: 'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1044848602,2873127888&fm=26&gp=0.jpg' },
+
+{
+  star: '⭐⭐⭐⭐',
+  name: '路上风景',
+  area: '新疆',
+  image: 'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=4207370263,1352577499&fm=26&gp=0.jpg' }];exports.mockList = mockList;
+
+
+
+var page1 = [
+{
+  star: '⭐⭐',
+  name: '景点风景',
+  area: '西藏',
+  image: 'https://dss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2367622683,2788805059&fm=26&gp=0.jpg' },
+
+{
+  star: '⭐⭐⭐',
+  name: '居民风景',
+  area: '蒙古',
+  image: 'https://dss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2533745672,2091157665&fm=26&gp=0.jpg' },
+
+{
+  star: '⭐⭐⭐⭐',
+  name: '路上风景',
+  area: '蒙古',
+  image: 'http://pic2.sc.chinaz.com/Files/pic/pic9/202002/hpic2119_s.jpg' },
+
+{
+  star: '⭐⭐⭐⭐',
+  name: '路上风景',
+  area: '西藏',
+  image: 'http://pic2.sc.chinaz.com/Files/pic/pic9/202002/zzpic23369_s.jpg' },
+
+{
+  star: '⭐⭐⭐',
+  name: '路上风景',
+  area: '新疆',
+  image: 'http://pic2.sc.chinaz.com/Files/pic/pic9/202002/hpic2130_s.jpg' },
+
+{
+  star: '⭐⭐⭐⭐',
+  name: '路上风景',
+  area: '新疆',
+  image: 'http://pic1.sc.chinaz.com/Files/pic/pic9/202002/zzpic23346_s.jpg' },
+
+{
+  star: '⭐⭐⭐⭐⭐',
+  name: '路上风景',
+  area: '新疆',
+  image: 'http://pic1.sc.chinaz.com/Files/pic/pic9/202002/zzpic23344_s.jpg' },
+
+{
+  star: '⭐⭐⭐⭐⭐',
+  name: '路上风景',
+  area: '新疆',
+  image: 'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=4207370263,1352577499&fm=26&gp=0.jpg' },
+
+{
+  star: '⭐⭐⭐⭐⭐',
+  name: '路上风景',
+  area: '新疆',
+  image: 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1017119111,298296291&fm=26&gp=0.jpg' },
+
+{
+  star: '⭐⭐⭐',
+  name: '路上风景',
+  area: '新疆',
+  image: 'http://pic1.sc.chinaz.com/Files/pic/pic9/202002/zzpic23343_s.jpg' }];exports.page1 = page1;
+
+
+var page2 = [
+{
+  star: '⭐⭐',
+  name: '天空之美',
+  area: '西藏',
+  image: 'https://dss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2367622683,2788805059&fm=26&gp=0.jpg' },
+
+{
+  star: '⭐⭐⭐',
+  name: '居民风景',
+  area: '蒙古',
+  image: 'https://dss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1629508308,1689150841&fm=26&gp=0.jpg' },
+
+{
+  star: '⭐⭐⭐⭐',
+  name: '路上风景',
+  area: '蒙古',
+  image: 'http://pic2.sc.chinaz.com/Files/pic/pic9/202002/hpic2119_s.jpg' },
+
+{
+  star: '⭐⭐⭐⭐',
+  name: '路上风景',
+  area: '西藏',
+  image: 'http://pic2.sc.chinaz.com/Files/pic/pic9/202002/zzpic23369_s.jpg' },
+
+{
+  star: '⭐⭐⭐',
+  name: '路上风景',
+  area: '新疆',
+  image: 'http://pic2.sc.chinaz.com/Files/pic/pic9/202002/hpic2130_s.jpg' },
+
+{
+  star: '⭐⭐⭐⭐',
+  name: '路上风景',
+  area: '新疆',
+  image: 'http://pic1.sc.chinaz.com/Files/pic/pic9/202002/zzpic23346_s.jpg' },
+
+{
+  star: '⭐⭐⭐⭐⭐',
+  name: '路上风景',
+  area: '新疆',
+  image: 'http://pic1.sc.chinaz.com/Files/pic/pic9/202002/zzpic23344_s.jpg' },
+
+{
+  star: '⭐⭐⭐⭐⭐',
+  name: '路上风景',
+  area: '新疆',
+  image: 'http://pic1.sc.chinaz.com/Files/pic/pic9/202002/zzpic23343_s.jpg' },
+
+{
+  star: '⭐⭐⭐⭐⭐',
+  name: '路上风景',
+  area: '新疆',
+  image: 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1017119111,298296291&fm=26&gp=0.jpg' },
+
+{
+  star: '⭐⭐⭐',
+  name: '路上风景',
+  area: '新疆',
+  image: 'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1044848602,2873127888&fm=26&gp=0.jpg' }];exports.page2 = page2;
+
+
+
+var page3 = [
+{
+  star: '⭐⭐',
+  name: '天空之美',
+  area: '西藏',
+  image: 'https://dss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2367622683,2788805059&fm=26&gp=0.jpg' },
+
+{
+  star: '⭐⭐⭐',
+  name: '居民风景',
+  area: '蒙古',
+  image: 'https://dss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1629508308,1689150841&fm=26&gp=0.jpg' },
+
+{
+  star: '⭐⭐⭐⭐',
+  name: '路上风景',
+  area: '蒙古',
+  image: 'http://pic2.sc.chinaz.com/Files/pic/pic9/202002/hpic2119_s.jpg' }];exports.page3 = page3;
+
+
+
+
+var imgList = [
+{
+  name: 'logo',
+  url: '/static/b.jpg' },
+
+{
+  name: 'logo',
+  url: '/static/c.jpg' },
+
+{
+  name: 'logo',
+  url: '/static/e.jpg' },
+
+{
+  name: 'logo',
+  url: '/static/d.jpg' }];exports.imgList = imgList;
+
+/***/ }),
+/* 55 */,
+/* 56 */,
+/* 57 */,
+/* 58 */,
+/* 59 */,
+/* 60 */,
+/* 61 */,
+/* 62 */,
+/* 63 */,
+/* 64 */,
+/* 65 */,
+/* 66 */,
+/* 67 */,
+/* 68 */,
+/* 69 */,
+/* 70 */,
+/* 71 */,
+/* 72 */,
+/* 73 */,
+/* 74 */,
+/* 75 */,
+/* 76 */,
+/* 77 */,
+/* 78 */,
+/* 79 */,
+/* 80 */,
+/* 81 */,
+/* 82 */,
+/* 83 */,
+/* 84 */,
+/* 85 */,
+/* 86 */,
+/* 87 */,
+/* 88 */,
+/* 89 */,
+/* 90 */,
+/* 91 */,
+/* 92 */,
+/* 93 */,
+/* 94 */,
+/* 95 */,
+/* 96 */,
+/* 97 */,
+/* 98 */,
+/* 99 */,
+/* 100 */,
+/* 101 */,
+/* 102 */,
+/* 103 */,
+/* 104 */,
+/* 105 */,
+/* 106 */,
+/* 107 */,
+/* 108 */,
+/* 109 */,
+/* 110 */,
+/* 111 */,
+/* 112 */,
+/* 113 */,
+/* 114 */,
+/* 115 */,
+/* 116 */,
+/* 117 */,
+/* 118 */
+/*!*******************************************************!*\
+  !*** E:/project20201123/uni-app1/common/lgRouters.js ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = _default;var _routerMap = _interopRequireDefault(__webpack_require__(/*! ./routerMap.js */ 127));
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _slicedToArray(arr, i) {return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();}function _nonIterableRest() {throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}function _unsupportedIterableToArray(o, minLen) {if (!o) return;if (typeof o === "string") return _arrayLikeToArray(o, minLen);var n = Object.prototype.toString.call(o).slice(8, -1);if (n === "Object" && o.constructor) n = o.constructor.name;if (n === "Map" || n === "Set") return Array.from(o);if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);}function _arrayLikeToArray(arr, len) {if (len == null || len > arr.length) len = arr.length;for (var i = 0, arr2 = new Array(len); i < len; i++) {arr2[i] = arr[i];}return arr2;}function _iterableToArrayLimit(arr, i) {if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return;var _arr = [];var _n = true;var _d = false;var _e = undefined;try {for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {_arr.push(_s.value);if (i && _arr.length === i) break;}} catch (err) {_d = true;_e = err;} finally {try {if (!_n && _i["return"] != null) _i["return"]();} finally {if (_d) throw _e;}}return _arr;}function _arrayWithHoles(arr) {if (Array.isArray(arr)) return arr;}
+/* 
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            *name:跳转路由的别名,别名来源routerMap.js,
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            *params:跳转的传递的参数,用于拼接到url上;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            *routerMethods:navigateTo,redirectTo,reLanch,switchTab,navigateBack,,
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            * 
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            * 
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            * */
+function _default(name, params, routerMethod) {
+  var pages = getCurrentPages(); // 函数用于获取当前页面栈的实例，以数组形式按栈的顺序给出，第一个元素为首页，最后一个元素为当前页面。
+  var tabBarList = ['Animal', 'Beautiful', 'Foods', 'Me']; //tabBar的页面
+  var jumpRouterMethod = 'navigateTo'; //默认页面的跳转方法;
+  var url; //默认的跳转url
+  if (pages.length >= 9) {
+    //因为使用navigateTo跳转页面时保留当前页面跳转到其它页面 ,
+    //当超出页面栈时,使用redirectTo关闭当前页面跳转到应用内某个页面
+    jumpRouterMethod = 'redirectTo';
+  }
+
+  if (tabBarList.includes(name)) {
+    //判断是否为tabBar导航栏页面,如果是使用 switchTab 跳转到 tabBar 页面，并关闭其他所有非 tabBar 页面。
+    jumpRouterMethod = 'switchTab';
+    params = {};
+  }
+
+  if (routerMethod) {
+    //如果指定了跳转模式,则使用指定的跳转模式
+    jumpRouterMethod = routerMethod;
+  }
+  if (!_routerMap.default[name]) {
+    console.error("\u627E\u4E0D\u5230\u8BE5\u8DEF\u7531\u5730\u5740,\u8BF7\u786E\u4FDD\u8BE5\u8DEF\u7531\u5730\u5740)(".concat(name, ")\u586B\u5199\u6B63\u786E"));
+    return;
+  }
+  url = "".concat(_routerMap.default[name].path);
+  if (params && Object.entries(params).length) {
+    url = "".concat(url, "?");
+    Object.entries(params).forEach(function (_ref, index) {var _ref2 = _slicedToArray(_ref, 2),key = _ref2[0],value = _ref2[1];
+      url += "".concat(key, "=").concat(value).concat(index === Object.entries(params).length - 1 ? '' : '&');
+    });
+  }
+  if (_routerMap.default[name].auth) {//可以扩展增加登陆状态的数据的判断,在需要的时候
+    console.log('需要登录,跳转到登陆页');
+    // uni[jumpRouterMethod]({url})
+    return;
+  }
+  // 不需要登录 直接跳转
+  uni[jumpRouterMethod]({
+    url: url });
+
+}
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+/* 119 */,
+/* 120 */,
+/* 121 */,
+/* 122 */,
+/* 123 */,
+/* 124 */,
+/* 125 */,
+/* 126 */,
+/* 127 */
+/*!*******************************************************!*\
+  !*** E:/project20201123/uni-app1/common/routerMap.js ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var tabBar = '/pages/tabBar/';var _default =
+{
+  Animal: {
+    path: "".concat(tabBar, "/animal/index"),
+    auth: false //是否需要登陆后跳转
+  },
+  Beautiful: {
+    path: "".concat(tabBar, "/beautiful/index"),
+    auth: false //是否需要登陆后跳转
+  },
+  Foods: {
+    path: "".concat(tabBar, "/foods/index"),
+    auth: false //是否需要登陆后跳转
+  },
+  Me: {
+    path: "".concat(tabBar, "/me/index"),
+    auth: false //是否需要登陆后跳转
+  } };exports.default = _default;
 
 /***/ })
 ]]);
