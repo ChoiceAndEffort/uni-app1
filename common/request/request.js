@@ -42,7 +42,6 @@ export default function(URL, sendData, sendMethod = 'post', config = {}) {
 						data:getList
 					})
 				}else if(data.formPage === 'foods'){
-					console.log(8888888888);
 					const index = (Math.random() * 3).toFixed();
 					const mockArr = [foodsMockPage1, foodsMockPage2, foodsMockPage3,foodsMockPage4];
 					const getList = mockArr[index];

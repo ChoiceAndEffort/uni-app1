@@ -68,7 +68,6 @@ export default {
 			if (res.code === 200) {
 				const getList = res.data;
 				this.tabs[this.current].list.push(...getList)
-				console.log(this.tabs[this.current].list, 111111111, getList);
 				this.tabs[this.current].hasMore = getList && getList.length === this.tabs[this.current].filters.pageSize;
 				if (this.tabs[this.current].hasMore) {
 					this.tabs[this.current].filters.pageNum++;
@@ -77,10 +76,11 @@ export default {
 		},
 		tabsChange(index) {
 			this.current = this.swiperCurrent = index;
+					this.findList();
 		},
 		swiperChange(e) {
-			console.log(e.detail.current);
 			this.current = this.swiperCurrent = e.detail.current;
+					this.findList();
 		},
 		onreachBottom() {}
 	}

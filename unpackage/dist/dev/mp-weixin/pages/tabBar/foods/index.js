@@ -207,7 +207,6 @@ var _constants = __webpack_require__(/*! ./constants.js */ 44);function _interop
                 if (res.code === 200) {
                   getList = res.data;
                   (_this$tabs$_this$curr = _this.tabs[_this.current].list).push.apply(_this$tabs$_this$curr, _toConsumableArray(getList));
-                  console.log(_this.tabs[_this.current].list, 111111111, getList);
                   _this.tabs[_this.current].hasMore = getList && getList.length === _this.tabs[_this.current].filters.pageSize;
                   if (_this.tabs[_this.current].hasMore) {
                     _this.tabs[_this.current].filters.pageNum++;
@@ -216,10 +215,11 @@ var _constants = __webpack_require__(/*! ./constants.js */ 44);function _interop
     },
     tabsChange: function tabsChange(index) {
       this.current = this.swiperCurrent = index;
+      this.findList();
     },
     swiperChange: function swiperChange(e) {
-      console.log(e.detail.current);
       this.current = this.swiperCurrent = e.detail.current;
+      this.findList();
     },
     onreachBottom: function onreachBottom() {} } };exports.default = _default;
 
