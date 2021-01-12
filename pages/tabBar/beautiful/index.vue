@@ -61,35 +61,52 @@ export default {
 			}
 		};
 	},
-	onLoad() {
-		this.getList();
+	onShow() {
+		// this.getList();
+		this.findlist();
 	},
 	onReachBottom() {
-		this.getList();
+		// this.getList();
+		this.findlist();
 	},
 	methods: {
 		toJSON() {
 			return this;
 		},
-		getList() {
+		// getList() {
+		// 	if (this.loading || !this.hasMore) return;
+		// 	this.loading = true;
+		// 	this.loadStatus = 'loading';
+		// 	setTimeout(() => {
+		// 		this.loading = false;
+		// 		this.loadStatus = 'loadmore';
+		// 		const index = (Math.random() * 3).toFixed();
+		// 		const mockArr = [mockList, page1, page2, page3];
+		// 		const getList = mockArr[index];
+		// 		this.list = this.list.concat(getList);
+		// 		this.filters.page++;
+		// 		// console.log(this.filters.page, index, getList.length);
+		// 		this.hasMore = getList.length === this.filters.pageSize;
+		// 		this.loadStatus = getList.length === this.filters.pageSize ? 'loadmore' : 'nomore';
+		// 	}, 1000);
+		// },
+		clear() {
+			this.$refs.uWaterfall.clear();
+		},
+		async findlist() {
 			if (this.loading || !this.hasMore) return;
 			this.loading = true;
 			this.loadStatus = 'loading';
-			setTimeout(() => {
-				this.loading = false;
-				this.loadStatus = 'loadmore';
-				const index = (Math.random() * 3).toFixed();
-				const mockArr = [mockList, page1, page2, page3];
-				const getList = mockArr[index];
+			const res = await this.$ajax('', { fromPage: 'beautiful' });
+			this.loading = false;
+			this.loadStatus = 'loadmore';
+			if (res.code === 200) {
+				const getList = res.data;
 				this.list = this.list.concat(getList);
 				this.filters.page++;
-				console.log(this.filters.page, index, getList.length);
 				this.hasMore = getList.length === this.filters.pageSize;
 				this.loadStatus = getList.length === this.filters.pageSize ? 'loadmore' : 'nomore';
-			}, 1000);
-		},
-		clear() {
-			this.$refs.uWaterfall.clear();
+			}
 		}
 	}
 };
@@ -118,7 +135,7 @@ export default {
 		background-color: #ffffff;
 		padding: 8px;
 		position: relative;
-		border:2rpx solid #ccc;
+		border: 2rpx solid #ccc;
 	}
 
 	.u-close {

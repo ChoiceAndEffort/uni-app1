@@ -10471,9 +10471,151 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
   indexListSticky: 965 };exports.default = _default;
 
 /***/ }),
-/* 40 */,
-/* 41 */,
-/* 42 */,
+/* 40 */
+/*!**************************************************************!*\
+  !*** E:/project20201123/uni-app1/common/router/lgRouters.js ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = _default;var _routerMap = _interopRequireDefault(__webpack_require__(/*! ./routerMap.js */ 41));
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _slicedToArray(arr, i) {return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();}function _nonIterableRest() {throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}function _unsupportedIterableToArray(o, minLen) {if (!o) return;if (typeof o === "string") return _arrayLikeToArray(o, minLen);var n = Object.prototype.toString.call(o).slice(8, -1);if (n === "Object" && o.constructor) n = o.constructor.name;if (n === "Map" || n === "Set") return Array.from(o);if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);}function _arrayLikeToArray(arr, len) {if (len == null || len > arr.length) len = arr.length;for (var i = 0, arr2 = new Array(len); i < len; i++) {arr2[i] = arr[i];}return arr2;}function _iterableToArrayLimit(arr, i) {if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return;var _arr = [];var _n = true;var _d = false;var _e = undefined;try {for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {_arr.push(_s.value);if (i && _arr.length === i) break;}} catch (err) {_d = true;_e = err;} finally {try {if (!_n && _i["return"] != null) _i["return"]();} finally {if (_d) throw _e;}}return _arr;}function _arrayWithHoles(arr) {if (Array.isArray(arr)) return arr;}
+/* 
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            *name:跳转路由的别名,别名来源routerMap.js,
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            *params:跳转的传递的参数,用于拼接到url上;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            *routerMethods:navigateTo,redirectTo,reLanch,switchTab,navigateBack,,
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            * 
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            * 
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            * */
+function _default(name, params, routerMethod) {
+  var pages = getCurrentPages(); // 函数用于获取当前页面栈的实例，以数组形式按栈的顺序给出，第一个元素为首页，最后一个元素为当前页面。
+  var tabBarList = ['Animal', 'Beautiful', 'Foods', 'Me']; //tabBar的页面
+  var jumpRouterMethod = 'navigateTo'; //默认页面的跳转方法;
+  var url; //默认的跳转url
+  if (pages.length >= 9) {
+    //因为使用navigateTo跳转页面时保留当前页面跳转到其它页面 ,
+    //当超出页面栈时,使用redirectTo关闭当前页面跳转到应用内某个页面
+    jumpRouterMethod = 'redirectTo';
+  }
+
+  if (tabBarList.includes(name)) {
+    //判断是否为tabBar导航栏页面,如果是使用 switchTab 跳转到 tabBar 页面，并关闭其他所有非 tabBar 页面。
+    jumpRouterMethod = 'switchTab';
+    params = {};
+  }
+
+  if (routerMethod) {
+    //如果指定了跳转模式,则使用指定的跳转模式
+    jumpRouterMethod = routerMethod;
+  }
+  if (!_routerMap.default[name]) {
+    console.error("\u627E\u4E0D\u5230\u8BE5\u8DEF\u7531\u5730\u5740,\u8BF7\u786E\u4FDD\u8BE5\u8DEF\u7531\u5730\u5740)(".concat(name, ")\u586B\u5199\u6B63\u786E"));
+    return;
+  }
+  url = "".concat(_routerMap.default[name].path);
+  if (params && Object.entries(params).length) {
+    url = "".concat(url, "?");
+    Object.entries(params).forEach(function (_ref, index) {var _ref2 = _slicedToArray(_ref, 2),key = _ref2[0],value = _ref2[1];
+      url += "".concat(key, "=").concat(value).concat(index === Object.entries(params).length - 1 ? '' : '&');
+    });
+  }
+  if (_routerMap.default[name].auth) {//可以扩展增加登陆状态的数据的判断,在需要的时候
+    console.log('需要登录,跳转到登陆页');
+    // uni[jumpRouterMethod]({url})
+    return;
+  }
+  // 不需要登录 直接跳转
+  uni[jumpRouterMethod]({
+    url: url });
+
+}
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+/* 41 */
+/*!**************************************************************!*\
+  !*** E:/project20201123/uni-app1/common/router/routerMap.js ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var tabBar = '/pages/tabBar/';var _default =
+{
+  Animal: {
+    path: "".concat(tabBar, "/animal/index"),
+    auth: false //是否需要登陆后跳转
+  },
+  Beautiful: {
+    path: "".concat(tabBar, "/beautiful/index"),
+    auth: false //是否需要登陆后跳转
+  },
+  Foods: {
+    path: "".concat(tabBar, "/foods/index"),
+    auth: false //是否需要登陆后跳转
+  },
+  Me: {
+    path: "".concat(tabBar, "/me/index"),
+    auth: false //是否需要登陆后跳转
+  } };exports.default = _default;
+
+/***/ }),
+/* 42 */
+/*!*************************************************************!*\
+  !*** E:/project20201123/uni-app1/common/request/request.js ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = _default;
+var _constants = __webpack_require__(/*! @/pages/tabBar/beautiful/constants.js */ 57); //beautiful的假数据
+
+
+
+
+
+
+
+var baseUrl = "https://www.baidu.com/";
+function _default(URL, sendData) {var sendMethod = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'post';var config = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : {};
+  return new Promise(function (resolve, reject) {
+    var url = "".concat(baseUrl, "/").concat(URL) || baseUrl;
+    var data = sendData || {};
+    var method = sendMethod;
+    var header = config.header || {
+      'Content-Type': config.contentType || 'application/json' };
+
+    var dataType = 'json' || false;
+    uni.request({
+      url: url,
+      data: data,
+      method: method,
+      header: header,
+      success: function success(res) {
+        console.log('请求成功返回');
+        if (data.fromPage === 'beautiful') {
+          var index = (Math.random() * 3).toFixed();
+          var mockArr = [_constants.mockList, _constants.page1, _constants.page2, _constants.page3];
+          var getList = mockArr[index];
+          resolve({
+            code: 200,
+            data: getList });
+
+        }
+      },
+      fail: function fail(err) {
+        reject(err);
+        console.log('请求报错了');
+      } });
+
+
+  });
+}
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
 /* 43 */,
 /* 44 */,
 /* 45 */,
@@ -10485,7 +10627,10 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* 51 */,
 /* 52 */,
 /* 53 */,
-/* 54 */
+/* 54 */,
+/* 55 */,
+/* 56 */,
+/* 57 */
 /*!***********************************************************************!*\
   !*** E:/project20201123/uni-app1/pages/tabBar/beautiful/constants.js ***!
   \***********************************************************************/
@@ -10719,167 +10864,6 @@ var imgList = [
 {
   name: 'logo',
   url: '/static/d.jpg' }];exports.imgList = imgList;
-
-/***/ }),
-/* 55 */,
-/* 56 */,
-/* 57 */,
-/* 58 */,
-/* 59 */,
-/* 60 */,
-/* 61 */,
-/* 62 */,
-/* 63 */,
-/* 64 */,
-/* 65 */,
-/* 66 */,
-/* 67 */,
-/* 68 */,
-/* 69 */,
-/* 70 */,
-/* 71 */,
-/* 72 */,
-/* 73 */,
-/* 74 */,
-/* 75 */,
-/* 76 */,
-/* 77 */,
-/* 78 */,
-/* 79 */,
-/* 80 */,
-/* 81 */,
-/* 82 */,
-/* 83 */,
-/* 84 */,
-/* 85 */,
-/* 86 */,
-/* 87 */,
-/* 88 */,
-/* 89 */,
-/* 90 */,
-/* 91 */,
-/* 92 */,
-/* 93 */,
-/* 94 */,
-/* 95 */,
-/* 96 */,
-/* 97 */,
-/* 98 */,
-/* 99 */,
-/* 100 */,
-/* 101 */,
-/* 102 */,
-/* 103 */,
-/* 104 */,
-/* 105 */,
-/* 106 */,
-/* 107 */,
-/* 108 */,
-/* 109 */,
-/* 110 */,
-/* 111 */,
-/* 112 */,
-/* 113 */,
-/* 114 */,
-/* 115 */,
-/* 116 */,
-/* 117 */,
-/* 118 */
-/*!*******************************************************!*\
-  !*** E:/project20201123/uni-app1/common/lgRouters.js ***!
-  \*******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = _default;var _routerMap = _interopRequireDefault(__webpack_require__(/*! ./routerMap.js */ 127));
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _slicedToArray(arr, i) {return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();}function _nonIterableRest() {throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}function _unsupportedIterableToArray(o, minLen) {if (!o) return;if (typeof o === "string") return _arrayLikeToArray(o, minLen);var n = Object.prototype.toString.call(o).slice(8, -1);if (n === "Object" && o.constructor) n = o.constructor.name;if (n === "Map" || n === "Set") return Array.from(o);if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);}function _arrayLikeToArray(arr, len) {if (len == null || len > arr.length) len = arr.length;for (var i = 0, arr2 = new Array(len); i < len; i++) {arr2[i] = arr[i];}return arr2;}function _iterableToArrayLimit(arr, i) {if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return;var _arr = [];var _n = true;var _d = false;var _e = undefined;try {for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {_arr.push(_s.value);if (i && _arr.length === i) break;}} catch (err) {_d = true;_e = err;} finally {try {if (!_n && _i["return"] != null) _i["return"]();} finally {if (_d) throw _e;}}return _arr;}function _arrayWithHoles(arr) {if (Array.isArray(arr)) return arr;}
-/* 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            *name:跳转路由的别名,别名来源routerMap.js,
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            *params:跳转的传递的参数,用于拼接到url上;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            *routerMethods:navigateTo,redirectTo,reLanch,switchTab,navigateBack,,
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            * 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            * 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            * */
-function _default(name, params, routerMethod) {
-  var pages = getCurrentPages(); // 函数用于获取当前页面栈的实例，以数组形式按栈的顺序给出，第一个元素为首页，最后一个元素为当前页面。
-  var tabBarList = ['Animal', 'Beautiful', 'Foods', 'Me']; //tabBar的页面
-  var jumpRouterMethod = 'navigateTo'; //默认页面的跳转方法;
-  var url; //默认的跳转url
-  if (pages.length >= 9) {
-    //因为使用navigateTo跳转页面时保留当前页面跳转到其它页面 ,
-    //当超出页面栈时,使用redirectTo关闭当前页面跳转到应用内某个页面
-    jumpRouterMethod = 'redirectTo';
-  }
-
-  if (tabBarList.includes(name)) {
-    //判断是否为tabBar导航栏页面,如果是使用 switchTab 跳转到 tabBar 页面，并关闭其他所有非 tabBar 页面。
-    jumpRouterMethod = 'switchTab';
-    params = {};
-  }
-
-  if (routerMethod) {
-    //如果指定了跳转模式,则使用指定的跳转模式
-    jumpRouterMethod = routerMethod;
-  }
-  if (!_routerMap.default[name]) {
-    console.error("\u627E\u4E0D\u5230\u8BE5\u8DEF\u7531\u5730\u5740,\u8BF7\u786E\u4FDD\u8BE5\u8DEF\u7531\u5730\u5740)(".concat(name, ")\u586B\u5199\u6B63\u786E"));
-    return;
-  }
-  url = "".concat(_routerMap.default[name].path);
-  if (params && Object.entries(params).length) {
-    url = "".concat(url, "?");
-    Object.entries(params).forEach(function (_ref, index) {var _ref2 = _slicedToArray(_ref, 2),key = _ref2[0],value = _ref2[1];
-      url += "".concat(key, "=").concat(value).concat(index === Object.entries(params).length - 1 ? '' : '&');
-    });
-  }
-  if (_routerMap.default[name].auth) {//可以扩展增加登陆状态的数据的判断,在需要的时候
-    console.log('需要登录,跳转到登陆页');
-    // uni[jumpRouterMethod]({url})
-    return;
-  }
-  // 不需要登录 直接跳转
-  uni[jumpRouterMethod]({
-    url: url });
-
-}
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
-/* 119 */,
-/* 120 */,
-/* 121 */,
-/* 122 */,
-/* 123 */,
-/* 124 */,
-/* 125 */,
-/* 126 */,
-/* 127 */
-/*!*******************************************************!*\
-  !*** E:/project20201123/uni-app1/common/routerMap.js ***!
-  \*******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var tabBar = '/pages/tabBar/';var _default =
-{
-  Animal: {
-    path: "".concat(tabBar, "/animal/index"),
-    auth: false //是否需要登陆后跳转
-  },
-  Beautiful: {
-    path: "".concat(tabBar, "/beautiful/index"),
-    auth: false //是否需要登陆后跳转
-  },
-  Foods: {
-    path: "".concat(tabBar, "/foods/index"),
-    auth: false //是否需要登陆后跳转
-  },
-  Me: {
-    path: "".concat(tabBar, "/me/index"),
-    auth: false //是否需要登陆后跳转
-  } };exports.default = _default;
 
 /***/ })
 ]]);
