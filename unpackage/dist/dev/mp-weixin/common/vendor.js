@@ -10570,7 +10570,16 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = _default;
-var _constants = __webpack_require__(/*! @/pages/tabBar/beautiful/constants.js */ 57); //beautiful的假数据
+var _constants = __webpack_require__(/*! @/pages/tabBar/beautiful/constants.js */ 43);
+
+
+
+
+
+
+
+var _constants2 = __webpack_require__(/*! @/pages/tabBar/foods/constants.js */ 44); //beautiful的假数据
+//foods的假数据
 
 
 
@@ -10594,7 +10603,7 @@ function _default(URL, sendData) {var sendMethod = arguments.length > 2 && argum
       method: method,
       header: header,
       success: function success(res) {
-        console.log('请求成功返回');
+        console.log('请求成功返回', data);
         if (data.fromPage === 'beautiful') {
           var index = (Math.random() * 3).toFixed();
           var mockArr = [_constants.mockList, _constants.page1, _constants.page2, _constants.page3];
@@ -10602,6 +10611,16 @@ function _default(URL, sendData) {var sendMethod = arguments.length > 2 && argum
           resolve({
             code: 200,
             data: getList });
+
+        } else if (data.formPage === 'foods') {
+          console.log(8888888888);
+          var _index = (Math.random() * 3).toFixed();
+          var _mockArr = [_constants2.foodsMockPage1, _constants2.foodsMockPage2, _constants2.foodsMockPage3, _constants2.foodsMockPage4];
+          var _getList = _mockArr[_index];
+          resolve({
+            code: 200,
+            data: _getList });
+
 
         }
       },
@@ -10616,21 +10635,7 @@ function _default(URL, sendData) {var sendMethod = arguments.length > 2 && argum
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 43 */,
-/* 44 */,
-/* 45 */,
-/* 46 */,
-/* 47 */,
-/* 48 */,
-/* 49 */,
-/* 50 */,
-/* 51 */,
-/* 52 */,
-/* 53 */,
-/* 54 */,
-/* 55 */,
-/* 56 */,
-/* 57 */
+/* 43 */
 /*!***********************************************************************!*\
   !*** E:/project20201123/uni-app1/pages/tabBar/beautiful/constants.js ***!
   \***********************************************************************/
@@ -10864,6 +10869,110 @@ var imgList = [
 {
   name: 'logo',
   url: '/static/d.jpg' }];exports.imgList = imgList;
+
+/***/ }),
+/* 44 */
+/*!*******************************************************************!*\
+  !*** E:/project20201123/uni-app1/pages/tabBar/foods/constants.js ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.foodsMockPage4 = exports.foodsMockPage3 = exports.foodsMockPage2 = exports.foodsMockPage1 = exports.swiperTabMap = void 0;var swiperTabMap = [{
+  name: '肉肉',
+  status: 0 },
+
+{
+  name: '水果',
+  status: 1 },
+
+{
+  name: '粮食',
+  status: 2 }];exports.swiperTabMap = swiperTabMap;
+
+
+
+var foodsMockPage1 = [
+{
+  name: '羊肉串',
+  image: 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3306333788,1172141180&fm=26&gp=0.jpg',
+  star: '⭐⭐⭐',
+  area: '新疆' },
+
+{
+  name: '羊肉',
+  image: 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3830570909,2729483934&fm=26&gp=0.jpg',
+  star: '⭐⭐⭐',
+  area: '新疆' },
+
+{
+  name: '羊腿',
+  image: 'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2785858698,2500777274&fm=26&gp=0.jpg',
+  star: '⭐⭐⭐',
+  area: '新疆' }];exports.foodsMockPage1 = foodsMockPage1;
+
+
+
+var foodsMockPage2 = [
+{
+  name: '羊肉串',
+  image: 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3306333788,1172141180&fm=26&gp=0.jpg',
+  star: '⭐⭐⭐',
+  area: '新疆' },
+
+{
+  name: '羊肉',
+  image: 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3830570909,2729483934&fm=26&gp=0.jpg',
+  star: '⭐⭐⭐',
+  area: '新疆' },
+
+{
+  name: '羊腿',
+  image: 'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2785858698,2500777274&fm=26&gp=0.jpg',
+  star: '⭐⭐⭐',
+  area: '新疆' }];exports.foodsMockPage2 = foodsMockPage2;
+
+
+var foodsMockPage3 = [
+{
+  name: '羊肉串',
+  image: 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3306333788,1172141180&fm=26&gp=0.jpg',
+  star: '⭐⭐⭐',
+  area: '新疆' },
+
+{
+  name: '羊肉',
+  image: 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3830570909,2729483934&fm=26&gp=0.jpg',
+  star: '⭐⭐⭐',
+  area: '新疆' },
+
+{
+  name: '羊腿',
+  image: 'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2785858698,2500777274&fm=26&gp=0.jpg',
+  star: '⭐⭐⭐',
+  area: '新疆' }];exports.foodsMockPage3 = foodsMockPage3;
+
+
+
+var foodsMockPage4 = [
+{
+  name: '羊肉串',
+  image: 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3306333788,1172141180&fm=26&gp=0.jpg',
+  star: '⭐⭐⭐',
+  area: '新疆' },
+
+{
+  name: '羊肉',
+  image: 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3830570909,2729483934&fm=26&gp=0.jpg',
+  star: '⭐⭐⭐',
+  area: '新疆' },
+
+{
+  name: '羊腿',
+  image: 'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2785858698,2500777274&fm=26&gp=0.jpg',
+  star: '⭐⭐⭐',
+  area: '新疆' }];exports.foodsMockPage4 = foodsMockPage4;
 
 /***/ })
 ]]);

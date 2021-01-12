@@ -16,7 +16,7 @@ export default {
 		};
 	},
 	onLoad() {
-		const url = '/pages/tabBar/beautiful/index';
+		const url = '/pages/tabBar/foods/index';
 		uni.reLaunch({
 			url: url
 		});

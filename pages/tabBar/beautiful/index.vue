@@ -105,6 +105,7 @@ export default {
 				this.list = this.list.concat(getList);
 				this.filters.page++;
 				this.hasMore = getList.length === this.filters.pageSize;
+					console.log(this.filters.page,this.hasMore);
 				this.loadStatus = getList.length === this.filters.pageSize ? 'loadmore' : 'nomore';
 			}
 		}
@@ -112,7 +113,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .beautiful {
 	padding: 0 20rpx;
 	.swiper-item {

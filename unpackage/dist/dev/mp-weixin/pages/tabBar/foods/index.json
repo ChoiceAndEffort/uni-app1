@@ -1,4 +1,7 @@
 {
   "navigationBarTitleText": "美食",
-  "usingComponents": {}
+  "usingComponents": {
+    "u-tabs-swiper": "/node-modules/uview-ui/components/u-tabs-swiper/u-tabs-swiper",
+    "u-lazy-load": "/node-modules/uview-ui/components/u-lazy-load/u-lazy-load"
+  }
 }
