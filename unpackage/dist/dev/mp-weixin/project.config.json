@@ -10,21 +10,19 @@
   "libVersion": "",
   "appid": "wxea6c55b44a247053",
   "projectname": "uni-app1",
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
   "condition": {
     "search": {
-      "current": -1,
       "list": []
     },
     "conversation": {
-      "current": -1,
       "list": []
     },
     "game": {
-      "current": -1,
       "list": []
     },
     "miniprogram": {
-      "current": -1,
       "list": []
     }
   }

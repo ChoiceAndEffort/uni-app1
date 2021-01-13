@@ -1,4 +1,7 @@
 {
-  "navigationBarTitleText": "我的车",
-  "usingComponents": {}
+  "navigationBarTitleText": "动物",
+  "usingComponents": {
+    "u-swipe-action": "/node-modules/uview-ui/components/u-swipe-action/u-swipe-action",
+    "u-lazy-load": "/node-modules/uview-ui/components/u-lazy-load/u-lazy-load"
+  }
 }

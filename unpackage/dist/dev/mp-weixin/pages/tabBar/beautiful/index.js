@@ -196,6 +196,11 @@ var _constants = __webpack_require__(/*! ./constants.js */ 43);function _interop
       interval: 2000,
       duration: 500,
       loadStatus: 'loadmore',
+      loadText: {
+        loadmore: '上拉加载更多',
+        loading: '努力加载中',
+        nomore: '没有更多了' },
+
       loading: false,
       hasMore: true,
       list: [],
@@ -252,6 +257,7 @@ var _constants = __webpack_require__(/*! ./constants.js */ 43);function _interop
                   _this.hasMore = getList.length === _this.filters.pageSize;
                   console.log(_this.filters.page, _this.hasMore);
                   _this.loadStatus = getList.length === _this.filters.pageSize ? 'loadmore' : 'nomore';
+                  // console.log(this.loadStatus, 565656);
                 }case 10:case "end":return _context.stop();}}}, _callee);}))();
     } } };exports.default = _default;
 

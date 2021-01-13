@@ -35,7 +35,7 @@
         "pagePath": "pages/tabBar/animal/index",
         "iconPath": "static/tab/niu.png",
         "selectedIconPath": "static/tab/niu.png",
-        "text": "车"
+        "text": "动物"
       },
       {
         "pagePath": "pages/tabBar/me/index",

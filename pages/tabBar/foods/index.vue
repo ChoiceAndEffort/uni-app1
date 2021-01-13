@@ -3,10 +3,10 @@
 		<view class=""><u-tabs-swiper ref="uTabs" :list="tabList" :current="current" :is-scroll="false" @change="tabsChange" swiperWidth="750"></u-tabs-swiper></view>
 		<swiper :current="swiperCurrent" @change="swiperChange" style="height: calc(100vh - 100rpx);">
 			<swiper-item class="swiper-item" v-for="(item, index) in tabs" :key="index">
-				<scroll-view :key="index" scroll-y style="height: 100%;width: 100%;" @scrolltolower="onreachBottom">
-					<template v-for="(el,elIndex) in item.list">
+				<scroll-view :key="index" scroll-y style="height: 100%;width: 100%;" @scrolltolower="scrollBottom">
+					<template v-for="(el, elIndex) in item.list">
 						<view :key="el.name" class="demo-warter">
-							<u-lazy-load threshold="-450" border-radius="10" :image="el.image" :index="elIndex" height="100rpx" ></u-lazy-load>
+							<u-lazy-load threshold="-450" border-radius="10" :image="el.image" :index="elIndex" height="100rpx"></u-lazy-load>
 							<view class="demo-name">{{ el.name }}</view>
 							<view class="demo-bottom">
 								<view class="area">{{ el.area }}</view>
@@ -14,8 +14,8 @@
 							</view>
 						</view>
 					</template>
-					
-					<view class="show-more-text u-text-center">{{ item.hasMore  ? '正在加载中' : '没有更多了' }}</view>
+
+					<view class="show-more-text u-text-center">{{ item.hasMore ? '正在加载中' : '没有更多了' }}</view>
 				</scroll-view>
 			</swiper-item>
 		</swiper>
@@ -67,22 +67,26 @@ export default {
 			const res = await this.$ajax('', data);
 			if (res.code === 200) {
 				const getList = res.data;
-				this.tabs[this.current].list.push(...getList)
+				this.tabs[this.current].list.push(...getList);
+				this.tabs[this.current].filters.pageNum++;
 				this.tabs[this.current].hasMore = getList && getList.length === this.tabs[this.current].filters.pageSize;
-				if (this.tabs[this.current].hasMore) {
-					this.tabs[this.current].filters.pageNum++;
-				}
+				console.log(this.tabs[this.current].hasMore, 5656, getList.length);
+				// if (this.tabs[this.current].hasMore) {
+				// 	this.tabs[this.current].filters.pageNum++;
+				// }
 			}
 		},
 		tabsChange(index) {
 			this.current = this.swiperCurrent = index;
-					this.findList();
+			this.findList();
 		},
 		swiperChange(e) {
 			this.current = this.swiperCurrent = e.detail.current;
-					this.findList();
+			this.findList();
 		},
-		onreachBottom() {}
+		scrollBottom() {
+			this.findList();
+		}
 	}
 };
 </script>

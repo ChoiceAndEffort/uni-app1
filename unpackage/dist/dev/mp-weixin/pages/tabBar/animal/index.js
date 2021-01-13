@@ -90,7 +90,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "recyclableRender", function() { return recyclableRender; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "components", function() { return components; });
-var components
+var components = {
+  uSwipeAction: function() {
+    return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-swipe-action/u-swipe-action */ "node-modules/uview-ui/components/u-swipe-action/u-swipe-action").then(__webpack_require__.bind(null, /*! uview-ui/components/u-swipe-action/u-swipe-action.vue */ 149))
+  },
+  uLazyLoad: function() {
+    return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-lazy-load/u-lazy-load */ "node-modules/uview-ui/components/u-lazy-load/u-lazy-load").then(__webpack_require__.bind(null, /*! uview-ui/components/u-lazy-load/u-lazy-load.vue */ 95))
+  }
+}
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
@@ -128,7 +135,17 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 19));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};} //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -137,11 +154,56 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 var _default =
 {
   data: function data() {
-    return {};
+    return {
+      list: [],
+      options: [
+      {
+        text: '收藏',
+        style: {
+          backgroundColor: '#007aff' } },
+
+
+      {
+        text: '删除',
+        style: {
+          backgroundColor: '#dd524d' } }] };
+
+
 
 
   },
-  methods: {} };exports.default = _default;
+  onShow: function onShow() {
+    this.findList();
+  },
+  methods: {
+    toJSON: function toJSON() {
+      return this;
+    },
+    click: function click(index, index1) {
+      if (index1 == 1) {
+        this.list.splice(index, 1);
+        this.$u.toast("\u5220\u9664\u4E86\u7B2C".concat(index, "\u4E2Acell"));
+      } else {
+        this.list[index].show = false;
+        this.$u.toast("\u6536\u85CF\u6210\u529F");
+      }
+    },
+    // 如果打开一个的时候，不需要关闭其他，则无需实现本方法
+    open: function open(index) {var _this = this;
+      // 先将正在被操作的swipeAction标记为打开状态，否则由于props的特性限制，
+      // 原本为'false'，再次设置为'false'会无效
+      this.list[index].show = true;
+      this.list.map(function (val, idx) {
+        if (index != idx) _this.list[idx].show = false;
+      });
+    },
+    findList: function findList() {var _this2 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var res, getList;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:_context.next = 2;return (
+                  _this2.$ajax('', { fromPage: 'animal' }));case 2:res = _context.sent;
+                if (res.code === 200) {
+                  getList = res.data;
+                  _this2.list = _this2.list.concat(getList);
+                }case 4:case "end":return _context.stop();}}}, _callee);}))();
+    } } };exports.default = _default;
 
 /***/ })
 

@@ -148,7 +148,7 @@ var _default =
 
   },
   onLoad: function onLoad() {
-    var url = '/pages/tabBar/foods/index';
+    var url = '/pages/tabBar/animal/index';
     uni.reLaunch({
       url: url });
 

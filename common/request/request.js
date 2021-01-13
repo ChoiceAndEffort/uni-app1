@@ -1,6 +1,5 @@
 //beautiful的假数据
 import {
-	imgList,
 	mockList,
 	page1,
 	page2,
@@ -14,6 +13,13 @@ import {
 	foodsMockPage4,
 } from '@/pages/tabBar/foods/constants.js';
 
+//animal的假数据
+import {
+	animalPage1,
+	animalPage2,
+	animalPage3,
+	animalPage4,
+} from '@/pages/tabBar/animal/constants.js';
 
 
 const baseUrl = "https://www.baidu.com/"
@@ -32,7 +38,7 @@ export default function(URL, sendData, sendMethod = 'post', config = {}) {
 			method,
 			header,
 			success: (res) => {
-				console.log('请求成功返回',data);
+				// console.log('请求成功返回',data);
 				if (data.fromPage === 'beautiful') {
 					const index = (Math.random() * 3).toFixed();
 					const mockArr = [mockList, page1, page2, page3];
@@ -41,7 +47,7 @@ export default function(URL, sendData, sendMethod = 'post', config = {}) {
 						code:200,
 						data:getList
 					})
-				}else if(data.formPage === 'foods'){
+				}else if(data.fromPage === 'foods'){
 					const index = (Math.random() * 3).toFixed();
 					const mockArr = [foodsMockPage1, foodsMockPage2, foodsMockPage3,foodsMockPage4];
 					const getList = mockArr[index];
@@ -49,7 +55,14 @@ export default function(URL, sendData, sendMethod = 'post', config = {}) {
 						code:200,
 						data:getList
 					})
-					
+				}else if(data.fromPage === 'animal'){
+					const index = (Math.random() * 3).toFixed();
+					const mockArr = [animalPage1,animalPage2,animalPage3,animalPage4,];
+					const getList = mockArr[index];
+					resolve({
+						code:200,
+						data:getList
+					})
 				}
 			},
 			fail: ((err) => {

@@ -35,7 +35,7 @@
 					</view>
 				</template>
 			</u-waterfall>
-			<u-loadmore bg-color="rgb(240, 240, 240)" :status="loadStatus" @loadmore="addRandomData" v-if="hasMore"></u-loadmore>
+			<u-loadmore bg-color="rgb(240, 240, 240)" :status="loadStatus" :loadText="loadText"></u-loadmore>
 		</view>
 	</view>
 </template>
@@ -51,6 +51,11 @@ export default {
 			interval: 2000,
 			duration: 500,
 			loadStatus: 'loadmore',
+			loadText: {
+				loadmore: '上拉加载更多',
+				loading: '努力加载中',
+				nomore: '没有更多了'
+			},
 			loading: false,
 			hasMore: true,
 			list: [],
@@ -105,8 +110,9 @@ export default {
 				this.list = this.list.concat(getList);
 				this.filters.page++;
 				this.hasMore = getList.length === this.filters.pageSize;
-					console.log(this.filters.page,this.hasMore);
+				console.log(this.filters.page, this.hasMore);
 				this.loadStatus = getList.length === this.filters.pageSize ? 'loadmore' : 'nomore';
+				// console.log(this.loadStatus, 565656);
 			}
 		}
 	}

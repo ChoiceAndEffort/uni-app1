@@ -94,7 +94,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "components", function() { return components; });
 var components = {
   uTabsSwiper: function() {
-    return Promise.all(/*! import() | node-modules/uview-ui/components/u-tabs-swiper/u-tabs-swiper */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-tabs-swiper/u-tabs-swiper")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-tabs-swiper/u-tabs-swiper.vue */ 137))
+    return Promise.all(/*! import() | node-modules/uview-ui/components/u-tabs-swiper/u-tabs-swiper */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-tabs-swiper/u-tabs-swiper")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-tabs-swiper/u-tabs-swiper.vue */ 109))
   },
   uLazyLoad: function() {
     return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-lazy-load/u-lazy-load */ "node-modules/uview-ui/components/u-lazy-load/u-lazy-load").then(__webpack_require__.bind(null, /*! uview-ui/components/u-lazy-load/u-lazy-load.vue */ 95))
@@ -207,10 +207,12 @@ var _constants = __webpack_require__(/*! ./constants.js */ 44);function _interop
                 if (res.code === 200) {
                   getList = res.data;
                   (_this$tabs$_this$curr = _this.tabs[_this.current].list).push.apply(_this$tabs$_this$curr, _toConsumableArray(getList));
+                  _this.tabs[_this.current].filters.pageNum++;
                   _this.tabs[_this.current].hasMore = getList && getList.length === _this.tabs[_this.current].filters.pageSize;
-                  if (_this.tabs[_this.current].hasMore) {
-                    _this.tabs[_this.current].filters.pageNum++;
-                  }
+                  console.log(_this.tabs[_this.current].hasMore, 5656, getList.length);
+                  // if (this.tabs[this.current].hasMore) {
+                  // 	this.tabs[this.current].filters.pageNum++;
+                  // }
                 }case 7:case "end":return _context.stop();}}}, _callee);}))();
     },
     tabsChange: function tabsChange(index) {
@@ -221,7 +223,9 @@ var _constants = __webpack_require__(/*! ./constants.js */ 44);function _interop
       this.current = this.swiperCurrent = e.detail.current;
       this.findList();
     },
-    onreachBottom: function onreachBottom() {} } };exports.default = _default;
+    scrollBottom: function scrollBottom() {
+      this.findList();
+    } } };exports.default = _default;
 
 /***/ }),
 
