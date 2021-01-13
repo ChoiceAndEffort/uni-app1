@@ -94,10 +94,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "components", function() { return components; });
 var components = {
   uTabsSwiper: function() {
-    return Promise.all(/*! import() | node-modules/uview-ui/components/u-tabs-swiper/u-tabs-swiper */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-tabs-swiper/u-tabs-swiper")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-tabs-swiper/u-tabs-swiper.vue */ 110))
+    return Promise.all(/*! import() | node-modules/uview-ui/components/u-tabs-swiper/u-tabs-swiper */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-tabs-swiper/u-tabs-swiper")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-tabs-swiper/u-tabs-swiper.vue */ 116))
   },
   uLazyLoad: function() {
-    return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-lazy-load/u-lazy-load */ "node-modules/uview-ui/components/u-lazy-load/u-lazy-load").then(__webpack_require__.bind(null, /*! uview-ui/components/u-lazy-load/u-lazy-load.vue */ 96))
+    return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-lazy-load/u-lazy-load */ "node-modules/uview-ui/components/u-lazy-load/u-lazy-load").then(__webpack_require__.bind(null, /*! uview-ui/components/u-lazy-load/u-lazy-load.vue */ 102))
   }
 }
 var render = function() {
@@ -194,6 +194,9 @@ var _constants = __webpack_require__(/*! ./constants.js */ 44);function _interop
       item.hasMore = true;
       return item;
     });
+    // this.findList();
+  },
+  onShow: function onShow() {
     this.findList();
   },
   methods: {
@@ -202,17 +205,13 @@ var _constants = __webpack_require__(/*! ./constants.js */ 44);function _interop
     },
     findList: function findList() {var _this = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var data, res, _this$tabs$_this$curr, getList;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:if (
                 _this.tabs[_this.current].hasMore) {_context.next = 2;break;}return _context.abrupt("return");case 2:
-                data = _objectSpread(_objectSpread({}, _this.tabs[_this.current].filters), {}, { formPage: 'foods' });_context.next = 5;return (
+                data = _objectSpread(_objectSpread({}, _this.tabs[_this.current].filters), {}, { fromPage: 'foods' });_context.next = 5;return (
                   _this.$ajax('', data));case 5:res = _context.sent;
                 if (res.code === 200) {
                   getList = res.data;
                   (_this$tabs$_this$curr = _this.tabs[_this.current].list).push.apply(_this$tabs$_this$curr, _toConsumableArray(getList));
                   _this.tabs[_this.current].filters.pageNum++;
                   _this.tabs[_this.current].hasMore = getList && getList.length === _this.tabs[_this.current].filters.pageSize;
-                  console.log(_this.tabs[_this.current].hasMore, 5656, getList.length);
-                  // if (this.tabs[this.current].hasMore) {
-                  // 	this.tabs[this.current].filters.pageNum++;
-                  // }
                 }case 7:case "end":return _context.stop();}}}, _callee);}))();
     },
     tabsChange: function tabsChange(index) {

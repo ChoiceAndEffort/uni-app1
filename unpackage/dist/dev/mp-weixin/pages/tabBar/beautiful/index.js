@@ -94,16 +94,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "components", function() { return components; });
 var components = {
   uDivider: function() {
-    return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-divider/u-divider */ "node-modules/uview-ui/components/u-divider/u-divider").then(__webpack_require__.bind(null, /*! uview-ui/components/u-divider/u-divider.vue */ 82))
+    return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-divider/u-divider */ "node-modules/uview-ui/components/u-divider/u-divider").then(__webpack_require__.bind(null, /*! uview-ui/components/u-divider/u-divider.vue */ 88))
   },
   uWaterfall: function() {
-    return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-waterfall/u-waterfall */ "node-modules/uview-ui/components/u-waterfall/u-waterfall").then(__webpack_require__.bind(null, /*! uview-ui/components/u-waterfall/u-waterfall.vue */ 89))
+    return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-waterfall/u-waterfall */ "node-modules/uview-ui/components/u-waterfall/u-waterfall").then(__webpack_require__.bind(null, /*! uview-ui/components/u-waterfall/u-waterfall.vue */ 95))
   },
   uLazyLoad: function() {
-    return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-lazy-load/u-lazy-load */ "node-modules/uview-ui/components/u-lazy-load/u-lazy-load").then(__webpack_require__.bind(null, /*! uview-ui/components/u-lazy-load/u-lazy-load.vue */ 96))
+    return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-lazy-load/u-lazy-load */ "node-modules/uview-ui/components/u-lazy-load/u-lazy-load").then(__webpack_require__.bind(null, /*! uview-ui/components/u-lazy-load/u-lazy-load.vue */ 102))
   },
   uLoadmore: function() {
-    return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-loadmore/u-loadmore */ "node-modules/uview-ui/components/u-loadmore/u-loadmore").then(__webpack_require__.bind(null, /*! uview-ui/components/u-loadmore/u-loadmore.vue */ 103))
+    return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-loadmore/u-loadmore */ "node-modules/uview-ui/components/u-loadmore/u-loadmore").then(__webpack_require__.bind(null, /*! uview-ui/components/u-loadmore/u-loadmore.vue */ 109))
   }
 }
 var render = function() {
@@ -255,10 +255,15 @@ var _constants = __webpack_require__(/*! ./constants.js */ 43);function _interop
                   _this.list = _this.list.concat(getList);
                   _this.filters.page++;
                   _this.hasMore = getList.length === _this.filters.pageSize;
-                  console.log(_this.filters.page, _this.hasMore);
                   _this.loadStatus = getList.length === _this.filters.pageSize ? 'loadmore' : 'nomore';
                   // console.log(this.loadStatus, 565656);
                 }case 10:case "end":return _context.stop();}}}, _callee);}))();
+    },
+    handlerGo: function handlerGo(item) {
+      console.log(888);
+      this.$router.push('Detail', item); //使用的是封装的方法
+
+
     } } };exports.default = _default;
 
 /***/ }),

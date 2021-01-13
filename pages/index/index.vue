@@ -16,18 +16,10 @@ export default {
 		};
 	},
 	onLoad() {
-		const url = '/pages/tabBar/animal/index';
-		uni.reLaunch({
-			url: url
-		});
 	},
 	methods: {
 		handleStart() {
-			const url = '/pages/tabBar/beautiful/index';
-			// uni.reLaunch({
-			// 	url: url
-			// });
-			this.$router.push(url, {}, 'reLaunch');//使用的是封装的方法
+			this.$router.push('Beautiful', {}, 'reLaunch');//使用的是封装的方法
 		}
 	}
 };

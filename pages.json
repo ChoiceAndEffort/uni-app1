@@ -34,7 +34,16 @@
 				"enablePullDownRefresh": false
 			}
 		}
-	],
+	    ,{
+            "path" : "pages/detail/index",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "详情页",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
 	"tabBar": {
     "color": "#7A7E83",
     "selectedColor": "#3cc51f",

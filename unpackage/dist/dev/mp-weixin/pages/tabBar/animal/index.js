@@ -92,10 +92,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "components", function() { return components; });
 var components = {
   uSwipeAction: function() {
-    return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-swipe-action/u-swipe-action */ "node-modules/uview-ui/components/u-swipe-action/u-swipe-action").then(__webpack_require__.bind(null, /*! uview-ui/components/u-swipe-action/u-swipe-action.vue */ 117))
+    return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-swipe-action/u-swipe-action */ "node-modules/uview-ui/components/u-swipe-action/u-swipe-action").then(__webpack_require__.bind(null, /*! uview-ui/components/u-swipe-action/u-swipe-action.vue */ 123))
   },
   uLazyLoad: function() {
-    return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-lazy-load/u-lazy-load */ "node-modules/uview-ui/components/u-lazy-load/u-lazy-load").then(__webpack_require__.bind(null, /*! uview-ui/components/u-lazy-load/u-lazy-load.vue */ 96))
+    return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-lazy-load/u-lazy-load */ "node-modules/uview-ui/components/u-lazy-load/u-lazy-load").then(__webpack_require__.bind(null, /*! uview-ui/components/u-lazy-load/u-lazy-load.vue */ 102))
   }
 }
 var render = function() {
@@ -186,7 +186,6 @@ var _default =
         return;
       }
       getApp().globalData.collect.push(this.list[index]);
-      console.log(getApp().globalData);
       this.$u.toast("\u6536\u85CF\u6210\u529F");
     },
     // 如果打开一个的时候，不需要关闭其他，则无需实现本方法

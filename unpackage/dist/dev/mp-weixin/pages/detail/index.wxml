@@ -1,0 +1,1 @@
+<view class="detail"><text class="title u-line-2 " style="color:#2979ff;">{{detail.name}}</text><text class="title u-line-2 " style="color:#2979ff;">{{detail.star}}</text><u-lazy-load vue-id="48a2a219-1" threshold="-450" border-radius="10" image="{{detail.image}}" height="{{300}}" img-mode="scaleToFill" bind:__l="__l"></u-lazy-load></view>

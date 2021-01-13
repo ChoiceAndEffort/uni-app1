@@ -15,7 +15,7 @@
 		<view class="content">
 			<u-waterfall v-model="list" ref="uWaterfall">
 				<template v-slot:left="{ leftList }">
-					<view class="demo-warter" v-for="(item, index) in leftList" :key="index">
+					<view class="demo-warter" v-for="(item, index) in leftList" :key="index" @click="handlerGo(item)">
 						<u-lazy-load threshold="-450" border-radius="10" :image="item.image" :index="index"></u-lazy-load>
 						<view class="demo-name">{{ item.name }}</view>
 						<view class="demo-bottom">
@@ -110,10 +110,15 @@ export default {
 				this.list = this.list.concat(getList);
 				this.filters.page++;
 				this.hasMore = getList.length === this.filters.pageSize;
-				console.log(this.filters.page, this.hasMore);
 				this.loadStatus = getList.length === this.filters.pageSize ? 'loadmore' : 'nomore';
 				// console.log(this.loadStatus, 565656);
 			}
+		},
+		handlerGo(item){
+			console.log(888);
+			this.$router.push('Detail', item);//使用的是封装的方法
+			
+
 		}
 	}
 };

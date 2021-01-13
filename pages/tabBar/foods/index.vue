@@ -55,6 +55,9 @@ export default {
 			item.hasMore = true;
 			return item;
 		});
+		// this.findList();
+	},
+	onShow(){
 		this.findList();
 	},
 	methods: {
@@ -63,17 +66,13 @@ export default {
 		},
 		async findList() {
 			if (!this.tabs[this.current].hasMore) return;
-			const data = { ...this.tabs[this.current].filters, formPage: 'foods' };
+			const data = { ...this.tabs[this.current].filters, fromPage: 'foods' };
 			const res = await this.$ajax('', data);
 			if (res.code === 200) {
 				const getList = res.data;
 				this.tabs[this.current].list.push(...getList);
 				this.tabs[this.current].filters.pageNum++;
 				this.tabs[this.current].hasMore = getList && getList.length === this.tabs[this.current].filters.pageSize;
-				console.log(this.tabs[this.current].hasMore, 5656, getList.length);
-				// if (this.tabs[this.current].hasMore) {
-				// 	this.tabs[this.current].filters.pageNum++;
-				// }
 			}
 		},
 		tabsChange(index) {

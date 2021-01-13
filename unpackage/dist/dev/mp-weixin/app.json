@@ -4,7 +4,8 @@
     "pages/tabBar/beautiful/index",
     "pages/tabBar/foods/index",
     "pages/tabBar/animal/index",
-    "pages/tabBar/me/index"
+    "pages/tabBar/me/index",
+    "pages/detail/index"
   ],
   "subPackages": [],
   "window": {
@@ -45,5 +46,6 @@
       }
     ]
   },
-  "usingComponents": {}
+  "usingComponents": {},
+  "sitemapLocation": "sitemap38.json"
 }

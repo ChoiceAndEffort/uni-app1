@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "详情页",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "u-lazy-load": "/node-modules/uview-ui/components/u-lazy-load/u-lazy-load"
+  }
+}

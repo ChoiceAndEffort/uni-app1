@@ -44,8 +44,9 @@ export default function(name, params, routerMethod) {
 		// uni[jumpRouterMethod]({url})
 		return;
 	}
+	console.log(url,jumpRouterMethod,6666);
 	// 不需要登录 直接跳转
 	uni[jumpRouterMethod]({
-		url
+		url,
 	})
 }

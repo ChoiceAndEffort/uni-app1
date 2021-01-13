@@ -49,7 +49,6 @@ export default {
 				return;
 			}
 			getApp().globalData.collect.push(this.list[index]);
-			console.log(getApp().globalData);
 			this.$u.toast(`收藏成功`);
 		},
 		// 如果打开一个的时候，不需要关闭其他，则无需实现本方法
